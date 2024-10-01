@@ -5,8 +5,8 @@ my_name = "Сергей"; my_name1 = "Сергей Петров"
 #print(my_name)
 #print(my_name1)
 
-#pet_name = "cat"
-#print("Наш любимчик - " + pet_name)
+pet_name = input ("имя вашего питомца ")
+print("Наш любимчик - " + pet_name)
 
 def print_python():
     print("Учу пайтон!")
