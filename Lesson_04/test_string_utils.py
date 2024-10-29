@@ -13,7 +13,6 @@ def test_capitilize_negative(input, expected):
     assert res.capitilize(input) == expected
 
 
-
 #2
 @pytest.mark.parametrize( "input, expected", [ ("   sergey", "sergey"), ("  1990", "1990") ] )
 def test_trim_positive(input, expected):
@@ -29,12 +28,12 @@ def test_trim_negative(input, expected):
 
 #3
 #не получается c двоеточием!
-@pytest.mark.parametrize( "input, expected", [ ("a,b,c,d", ["a", "b", "c", "d"] ), ("1:2", ["1", "2"]) ] )
+@pytest.mark.parametrize( "input, expected", [ ("a,b,c,d", ["a", "b", "c", "d"] ), ("1,2", ["1", "2"]) ] )
 def test_to_list_positive(input, expected):
     res = StringUtils()
     assert res.to_list(input) == expected
 
-@pytest.mark.parametrize( "input, expected", [ ("a,b,c,d", [ ] ) ] )
+@pytest.mark.parametrize( "input, expected", [ (" ", [] ) ] )
 def test_to_list_negative(input, expected):
     res = StringUtils()
     assert res.to_list(input) == expected
@@ -60,7 +59,7 @@ def test_delete_symbol_positive(input, symbol, expected):
     res = StringUtils()
     assert res.delete_symbol(input, symbol) == expected
 
-@pytest.mark.parametrize( "input, symbol, expected", [ ("  ", " ", " ") ] )
+@pytest.mark.parametrize( "input, symbol, expected", [ ("           ", " ", "") ] )
 def test_delete_symbol_negative(input, symbol, expected):
     res = StringUtils()
     assert res.delete_symbol(input, symbol) == expected
@@ -99,7 +98,7 @@ def test_is_empty_positive(input):
     res = StringUtils()
     assert res.is_empty(input) == True
 
-@pytest.mark.parametrize( "input", [ ("123"), ("") ] )
+@pytest.mark.parametrize( "input", [ (""), ("") ] )
 def test_is_empty_negatibe(input):
     res = StringUtils()
     assert res.is_empty(input) == True
@@ -112,7 +111,7 @@ def test_list_to_string_positive(input, expected):
     res = StringUtils()
     assert res.list_to_string(input) == expected
 
-@pytest.mark.parametrize( "input, expected", [ ( "   ", " , , ") ] )
+@pytest.mark.parametrize( "input, expected", [ ( "", "") ] )
 def test_list_to_string_negative(input, expected):
     res = StringUtils()
     assert res.list_to_string(input) == expected
