@@ -10,11 +10,9 @@ driver.maximize_window()
 
 # открыть страницу
 driver.get("http://uitestingplayground.com/classattr")
+sleep(3)
 
-# кликнуть на синию кнопку
-button = driver.find_element(By.CSS_SELECTOR, '[class="btn class3 btn-primary btn-test"]').click()
-sleep(10)
-button.click()
-
-
-
+# Кликните на синюю кнопку
+driver.find_element(By.XPATH, "//button[contains(concat(' ', normalize-space(@class), ' '), ' btn-primary ')]").click()
+sleep(3)
+driver.quit()

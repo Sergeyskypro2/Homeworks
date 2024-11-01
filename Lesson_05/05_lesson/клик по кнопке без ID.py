@@ -10,7 +10,9 @@ driver.maximize_window()
 
 # открыть страницу
 driver.get("http://uitestingplayground.com/dynamicid")
+sleep(3)
 
-# кликнуть на кнопку
-button = driver.find_element(By.CSS_SELECTOR, '[id="3ec09a99-b3cb-6dce-9fb7-a06c83971a1d"]').click()
-button.click()
+# Кликните на синюю кнопку.
+driver.find_element(By.CSS_SELECTOR, 'button[class="btn btn-primary"]').click()
+sleep(5)
+driver.quit()

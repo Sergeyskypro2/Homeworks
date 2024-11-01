@@ -11,14 +11,13 @@ driver.maximize_window()
 # открыть страницу
 driver.get("https://the-internet.herokuapp.com/add_remove_elements/")
 
-# пять раз кликнуть на кнопку
-for button in range(5):
-    button = driver.find_element(By.CSS_SELECTOR, "[onclick='addElement()']").click()
-    
+# Пять раз кликните на кнопку Add Element
+for _ in range(5):
+    driver.find_element(By.CSS_SELECTOR, 'button[onclick="addElement()"]').click()
+    sleep(1)
+
 #Соберите со страницы список кнопок Delete.
-    buttons = driver.find_element(By.CSS_SELECTOR, "[onclick='deleteElement()']")
-
-    print(f"ррр:{buttons}")
-
-sleep(0)
-
+buttons = driver.find_elements(By.CSS_SELECTOR, 'button[class="added-manually"]')
+print(f"Количество кнопок Delete: {len(buttons)}")
+sleep(3)
+driver.quit()
