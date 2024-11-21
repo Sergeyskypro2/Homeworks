@@ -8,4 +8,3 @@ class CartPage:
         total = self._driver.find_element(By.CSS_SELECTOR, 'div[class="summary_total_label"]').text
         print(total)
         return(total)
-        
