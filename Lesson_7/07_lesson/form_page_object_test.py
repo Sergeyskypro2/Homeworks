@@ -30,5 +30,4 @@ def test_form():
     assert 'success' in main_page._driver.find_element(By.ID, 'phone').get_attribute("class")
     assert 'success' in main_page._driver.find_element(By.ID, 'job-position').get_attribute("class")
     assert 'success' in main_page._driver.find_element(By.ID, 'company').get_attribute("class")
-    
     browser.quit()

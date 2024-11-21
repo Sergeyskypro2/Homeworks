@@ -9,4 +9,3 @@ class CartPage:
         print(total)
         return(total)
         
-        
