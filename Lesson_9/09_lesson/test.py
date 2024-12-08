@@ -7,8 +7,9 @@ db = Data("postgresql://postgres:123@localhost:5432/QA")
 
 
 def test_insert_subject():
-    name = "zavod"
-    db.create(name)
+    subject_title = "zavod"
+    subject_id = "16"
+    db.create(subject_title, subject_id)
     max_id = db.get_max_id()
 
     db.delete(max_id)
