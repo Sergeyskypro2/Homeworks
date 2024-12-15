@@ -40,3 +40,4 @@ def test_total():
 
     with allure.step("Закрыть браузер"):
         browser.quit()
+

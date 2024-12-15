@@ -4,3 +4,4 @@ pytest --alluredir allure-result
 просмотреть сформированный отчет  
 allure serve allure-result
 >>
+

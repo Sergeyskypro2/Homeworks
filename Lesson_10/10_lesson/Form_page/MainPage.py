@@ -50,3 +50,4 @@ class MainPage:
         self._driver.find_element(By.CSS_SELECTOR, 'input[name=company]').send_keys(term) # noqa
 
         self._driver.find_element(By.CSS_SELECTOR, 'button.btn.btn-outline-primary.mt-3').click() # noqa
+

@@ -25,3 +25,4 @@ class Registration:
         Password.send_keys(term_1)
 
         self._driver.find_element(By.CSS_SELECTOR, 'input[class="submit-button btn_action"]').click() # noqa
+

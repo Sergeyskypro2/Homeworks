@@ -26,3 +26,4 @@ def test_calc():
 
     with allure.step("Закрыть браузер"):
         browser.quit()
+

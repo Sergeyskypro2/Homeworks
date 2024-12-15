@@ -32,3 +32,4 @@ class MainPage:
         """Поиск элемента ответа"""
         res = self._driver.find_element(By.CSS_SELECTOR, ".screen").text
         return int(res)
+

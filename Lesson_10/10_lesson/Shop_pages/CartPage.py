@@ -12,3 +12,4 @@ class CartPage:
         """Печатает оконательную сумму"""
         print(total)
         return total
+

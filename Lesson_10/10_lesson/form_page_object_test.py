@@ -42,3 +42,4 @@ def test_form():
 
     with allure.step("Закрыть браузер"):
         browser.quit()
+

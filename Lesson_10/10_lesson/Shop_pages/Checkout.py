@@ -14,3 +14,4 @@ class Checkout:
         self._driver.find_element(By.CSS_SELECTOR, 'input#postal-code.input_error.form_input').send_keys(term3) # noqa
         """Посик элемента почтового индекса"""
         self._driver.find_element(By.CSS_SELECTOR, '[type="submit"]').click()
+
