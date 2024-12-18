@@ -1,0 +1,253 @@
+Index: Lesson_7/07_lesson/Calc_page/MainPage.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from selenium.webdriver.common.by import By\r\nfrom selenium.webdriver.support.ui import WebDriverWait\r\nfrom selenium.webdriver.support import expected_conditions as EC\r\nfrom time import sleep\r\nclass MainPage:\r\n\r\n    def __init__(self, driver):\r\n        self._driver = driver\r\n        self._driver.get('https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html')\r\n        self._driver.implicitly_wait(10)\r\n        self._driver.maximize_window()\r\n\r\n    def time(self, term):\r\n        time = self._driver.find_element(By.CSS_SELECTOR, 'input#delay')\r\n        time.clear()\r\n        time.send_keys(term)\r\n    \r\n    def count(self):\r\n\r\n        self._driver.find_element(By.XPATH, \"//span[text()='7']\").click()\r\n        self._driver.find_element(By.XPATH, \"//span[text()='+']\").click()\r\n        self._driver.find_element(By.XPATH, \"//span[text()='8']\").click()\r\n        self._driver.find_element(By.XPATH, \"//span[text()='=']\").click()\r\n\r\n        WebDriverWait(self._driver, 50, 0.5).until(\r\n            EC.text_to_be_present_in_element(( By.CSS_SELECTOR, \".screen\"), \"15\"))\r\n        \r\n    def result(self):\r\n        res = self._driver.find_element(By.CSS_SELECTOR, \".screen\").text\r\n        return int(res)
+===================================================================
+diff --git a/Lesson_7/07_lesson/Calc_page/MainPage.py b/Lesson_7/07_lesson/Calc_page/MainPage.py
+--- a/Lesson_7/07_lesson/Calc_page/MainPage.py	(revision 2461280b9c51f08efdd747f6f2b07e9b10db0988)
++++ b/Lesson_7/07_lesson/Calc_page/MainPage.py	(date 1732282707490)
+@@ -1,20 +1,21 @@
+ from selenium.webdriver.common.by import By
+ from selenium.webdriver.support.ui import WebDriverWait
+ from selenium.webdriver.support import expected_conditions as EC
+-from time import sleep
++
+ class MainPage:
+ 
+     def __init__(self, driver):
+         self._driver = driver
+         self._driver.get('https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html')
+         self._driver.implicitly_wait(10)
++        self._driver.execute_script("document.body.style.zoom='80%'")
+         self._driver.maximize_window()
+ 
+     def time(self, term):
+         time = self._driver.find_element(By.CSS_SELECTOR, 'input#delay')
+         time.clear()
+         time.send_keys(term)
+-    
++
+     def count(self):
+ 
+         self._driver.find_element(By.XPATH, "//span[text()='7']").click()
+@@ -23,8 +24,8 @@
+         self._driver.find_element(By.XPATH, "//span[text()='=']").click()
+ 
+         WebDriverWait(self._driver, 50, 0.5).until(
+-            EC.text_to_be_present_in_element(( By.CSS_SELECTOR, ".screen"), "15"))
+-        
++            EC.text_to_be_present_in_element((By.CSS_SELECTOR, ".screen"), "15"))
++
+     def result(self):
+         res = self._driver.find_element(By.CSS_SELECTOR, ".screen").text
+-        return int(res)
+\ No newline at end of file
++        return int(res)
+Index: Lesson_7/07_lesson/Shop_pages/CartPage.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from selenium.webdriver.common.by import By\r\nclass CartPage:\r\n\r\n    def __init__(self, browser):\r\n        self._driver = browser\r\n\r\n    def cart(self):\r\n        total = self._driver.find_element(By.CSS_SELECTOR, 'div[class=\"summary_total_label\"]').text\r\n        print(total)\r\n        return(total)
+===================================================================
+diff --git a/Lesson_7/07_lesson/Shop_pages/CartPage.py b/Lesson_7/07_lesson/Shop_pages/CartPage.py
+--- a/Lesson_7/07_lesson/Shop_pages/CartPage.py	(revision 2461280b9c51f08efdd747f6f2b07e9b10db0988)
++++ b/Lesson_7/07_lesson/Shop_pages/CartPage.py	(date 1732282865029)
+@@ -3,8 +3,9 @@
+ 
+     def __init__(self, browser):
+         self._driver = browser
++        self._driver.execute_script("document.body.style.zoom='80%'")
+ 
+     def cart(self):
+-        total = self._driver.find_element(By.CSS_SELECTOR, 'div[class="summary_total_label"]').text
+-        print(total)
+-        return(total)
+\ No newline at end of file
++        total = self._driver.find_element(
++            By.CSS_SELECTOR, 'div[class="summary_total_label"]').text
++        return total
+Index: Lesson_7/07_lesson/Shop_pages/Checkout.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from selenium.webdriver.common.by import By\r\nclass Checkout:\r\n\r\n    def __init__(self, browser):\r\n        self._driver = browser\r\n\r\n    def info(self, term1, term2, term3):\r\n        self._driver.find_element(By.CSS_SELECTOR, 'input#first-name.input_error.form_input').send_keys(term1)\r\n        self._driver.find_element(By.CSS_SELECTOR, 'input#last-name.input_error.form_input').send_keys(term2)\r\n        self._driver.find_element(By.CSS_SELECTOR, 'input#postal-code.input_error.form_input').send_keys(term3)\r\n        self._driver.find_element(By.CSS_SELECTOR, '[type=\"submit\"]').click()
+===================================================================
+diff --git a/Lesson_7/07_lesson/Shop_pages/Checkout.py b/Lesson_7/07_lesson/Shop_pages/Checkout.py
+--- a/Lesson_7/07_lesson/Shop_pages/Checkout.py	(revision 2461280b9c51f08efdd747f6f2b07e9b10db0988)
++++ b/Lesson_7/07_lesson/Shop_pages/Checkout.py	(date 1732282889661)
+@@ -3,9 +3,16 @@
+ 
+     def __init__(self, browser):
+         self._driver = browser
++        self._driver.execute_script("document.body.style.zoom='80%'")
+ 
+     def info(self, term1, term2, term3):
+-        self._driver.find_element(By.CSS_SELECTOR, 'input#first-name.input_error.form_input').send_keys(term1)
+-        self._driver.find_element(By.CSS_SELECTOR, 'input#last-name.input_error.form_input').send_keys(term2)
+-        self._driver.find_element(By.CSS_SELECTOR, 'input#postal-code.input_error.form_input').send_keys(term3)
+-        self._driver.find_element(By.CSS_SELECTOR, '[type="submit"]').click()
+\ No newline at end of file
++        info = self._driver.find_element(By.CSS_SELECTOR, 'input#first-name.input_error.form_input')
++        info.clear()
++        info.send_keys(term1)
++        info = self._driver.find_element(By.CSS_SELECTOR, 'input#last-name.input_error.form_input')
++        info.clear()
++        info.send_keys(term2)
++        info = self._driver.find_element(By.CSS_SELECTOR, 'input#postal-code.input_error.form_input')
++        info.clear()
++        info.send_keys(term3)
++        self._driver.find_element(By.CSS_SELECTOR, '[type="submit"]').click()
+Index: Lesson_7/07_lesson/Shop_pages/MainPage.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from selenium.webdriver.common.by import By\r\nclass MainPage:\r\n    def __init__(self, browser):\r\n        self._driver = browser\r\n\r\n    def add(self):\r\n        self._driver.find_element(By.CSS_SELECTOR, 'button[name=\"add-to-cart-sauce-labs-backpack\"]').click()\r\n        self._driver.find_element(By.CSS_SELECTOR, 'button[name=\"add-to-cart-sauce-labs-bolt-t-shirt\"]').click()\r\n        self._driver.find_element(By.CSS_SELECTOR, 'button[name=\"add-to-cart-sauce-labs-onesie\"]').click()\r\n\r\n\r\n        self._driver.find_element(By.CSS_SELECTOR, 'a[class=shopping_cart_link]').click()\r\n        self._driver.find_element(By.CSS_SELECTOR, 'button#checkout.btn.btn_action.btn_medium.checkout_button ').click()
+===================================================================
+diff --git a/Lesson_7/07_lesson/Shop_pages/MainPage.py b/Lesson_7/07_lesson/Shop_pages/MainPage.py
+--- a/Lesson_7/07_lesson/Shop_pages/MainPage.py	(revision 2461280b9c51f08efdd747f6f2b07e9b10db0988)
++++ b/Lesson_7/07_lesson/Shop_pages/MainPage.py	(date 1732282955191)
+@@ -2,12 +2,13 @@
+ class MainPage:
+     def __init__(self, browser):
+         self._driver = browser
++        self._driver.execute_script("document.body.style.zoom='80%'")
+ 
+     def add(self):
+         self._driver.find_element(By.CSS_SELECTOR, 'button[name="add-to-cart-sauce-labs-backpack"]').click()
+         self._driver.find_element(By.CSS_SELECTOR, 'button[name="add-to-cart-sauce-labs-bolt-t-shirt"]').click()
+         self._driver.find_element(By.CSS_SELECTOR, 'button[name="add-to-cart-sauce-labs-onesie"]').click()
+-
+-
+-        self._driver.find_element(By.CSS_SELECTOR, 'a[class=shopping_cart_link]').click()
+-        self._driver.find_element(By.CSS_SELECTOR, 'button#checkout.btn.btn_action.btn_medium.checkout_button ').click()
+\ No newline at end of file
++        self._driver.find_element(
++            By.CSS_SELECTOR, 'a[class=shopping_cart_link]').click()
++        self._driver.find_element(
++            By.CSS_SELECTOR, 'button#checkout.btn.btn_action.btn_medium.checkout_button ').click()
+Index: Lesson_7/07_lesson/Shop_pages/Registration.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from selenium.webdriver.common.by import By\r\nclass Registration:\r\n\r\n    def __init__(self, driver):\r\n        self._driver = driver\r\n        self._driver.get('https://www.saucedemo.com/')\r\n        self._driver.implicitly_wait(10)\r\n        self._driver.maximize_window()\r\n\r\n    def registr(self, term, term_1):\r\n        Username = self._driver.find_element(By.CSS_SELECTOR, 'input#user-name.input_error.form_input')\r\n        Username.clear()\r\n        Username.send_keys(term)\r\n\r\n        Password = self._driver.find_element(By.CSS_SELECTOR, 'input#password.input_error.form_input')\r\n        Password.clear()\r\n        Password.send_keys(term_1)\r\n        self._driver.find_element(By.CSS_SELECTOR, 'input[class=\"submit-button btn_action\"]').click()
+===================================================================
+diff --git a/Lesson_7/07_lesson/Shop_pages/Registration.py b/Lesson_7/07_lesson/Shop_pages/Registration.py
+--- a/Lesson_7/07_lesson/Shop_pages/Registration.py	(revision 2461280b9c51f08efdd747f6f2b07e9b10db0988)
++++ b/Lesson_7/07_lesson/Shop_pages/Registration.py	(date 1732283023971)
+@@ -5,14 +5,14 @@
+         self._driver = driver
+         self._driver.get('https://www.saucedemo.com/')
+         self._driver.implicitly_wait(10)
++        self._driver.execute_script("document.body.style.zoom='80%'")
+         self._driver.maximize_window()
+ 
+     def registr(self, term, term_1):
+-        Username = self._driver.find_element(By.CSS_SELECTOR, 'input#user-name.input_error.form_input')
+-        Username.clear()
+-        Username.send_keys(term)
+-
+-        Password = self._driver.find_element(By.CSS_SELECTOR, 'input#password.input_error.form_input')
+-        Password.clear()
+-        Password.send_keys(term_1)
+-        self._driver.find_element(By.CSS_SELECTOR, 'input[class="submit-button btn_action"]').click()
+\ No newline at end of file
++        reg = self._driver.find_element(By.CSS_SELECTOR, 'input#user-name.input_error.form_input')
++        reg.clear()
++        reg.send_keys(term)
++        reg = self._driver.find_element(By.CSS_SELECTOR, 'input#password.input_error.form_input')
++        reg.clear()
++        reg.send_keys(term_1)
++        self._driver.find_element(By.CSS_SELECTOR, 'input[class="submit-button btn_action"]').click()
+Index: Lesson_7/07_lesson/form_page_object_test.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from selenium import webdriver\r\nfrom selenium.webdriver.chrome.service import Service as ChromeService\r\nfrom webdriver_manager.chrome import ChromeDriverManager\r\nfrom selenium.webdriver.common.by import By\r\n\r\nfrom Form_page.MainPage import MainPage\r\n\r\ndef test_form(): \r\n    browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))\r\n    main_page = MainPage(browser)\r\n\r\n    main_page.input_first(\"Иван\")\r\n    main_page.input_last(\"Петров\")\r\n    main_page.input_address(\"Ленина, 55-3\")\r\n    main_page.input_zip(\"\")\r\n    main_page.input_city(\"Москва\")\r\n    main_page.input_country(\"Россия\")\r\n    main_page.input_mail(\"test@skypro.com\")\r\n    main_page.input_phone(\"+7985899998787\")\r\n    main_page.input_job(\"QA\")\r\n    main_page.input_company(\"SkyPro\")\r\n\r\n    assert 'success' in main_page._driver.find_element(By.ID, 'first-name').get_attribute(\"class\")\r\n    assert 'success' in main_page._driver.find_element(By.ID, 'last-name').get_attribute(\"class\")\r\n    assert 'success' in main_page._driver.find_element(By.ID, 'address').get_attribute(\"class\")\r\n    assert 'danger' in main_page._driver.find_element(By.ID, 'zip-code').get_attribute(\"class\")\r\n    assert 'success' in main_page._driver.find_element(By.ID, 'city').get_attribute(\"class\")\r\n    assert 'success' in main_page._driver.find_element(By.ID, 'country').get_attribute(\"class\")\r\n    assert 'success' in main_page._driver.find_element(By.ID, 'e-mail').get_attribute(\"class\")\r\n    assert 'success' in main_page._driver.find_element(By.ID, 'phone').get_attribute(\"class\")\r\n    assert 'success' in main_page._driver.find_element(By.ID, 'job-position').get_attribute(\"class\")\r\n    assert 'success' in main_page._driver.find_element(By.ID, 'company').get_attribute(\"class\")\r\n    browser.quit()
+===================================================================
+diff --git a/Lesson_7/07_lesson/form_page_object_test.py b/Lesson_7/07_lesson/form_page_object_test.py
+--- a/Lesson_7/07_lesson/form_page_object_test.py	(revision 2461280b9c51f08efdd747f6f2b07e9b10db0988)
++++ b/Lesson_7/07_lesson/form_page_object_test.py	(date 1732282541395)
+@@ -5,7 +5,7 @@
+ 
+ from Form_page.MainPage import MainPage
+ 
+-def test_form(): 
++def test_form():
+     browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+     main_page = MainPage(browser)
+ 
+@@ -30,4 +30,4 @@
+     assert 'success' in main_page._driver.find_element(By.ID, 'phone').get_attribute("class")
+     assert 'success' in main_page._driver.find_element(By.ID, 'job-position').get_attribute("class")
+     assert 'success' in main_page._driver.find_element(By.ID, 'company').get_attribute("class")
+-    browser.quit()
+\ No newline at end of file
++    browser.quit()
+Index: Lesson_7/07_lesson/shop_page_odject_test.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from selenium import webdriver\r\nfrom selenium.webdriver.chrome.service import Service as ChromeService\r\nfrom webdriver_manager.chrome import ChromeDriverManager\r\n\r\nfrom Shop_pages.Registration import Registration\r\nfrom Shop_pages.MainPage import MainPage\r\nfrom Shop_pages.Checkout import Checkout\r\nfrom Shop_pages.CartPage import CartPage\r\n\r\ndef test_total():\r\n    browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))\r\n    \r\n    Username = Registration(browser)\r\n    Username.registr(\"standard_user\", \r\n                     \"secret_sauce\")\r\n   \r\n    main_page = MainPage(browser)\r\n    main_page.add()\r\n\r\n    info = Checkout(browser)\r\n    info.info(\"Sergei\", \"Shlyapnikov\", \"607650\")\r\n\r\n    cart_page = CartPage(browser)\r\n    total = cart_page.cart()\r\n\r\n    assert total == \"Total: $58.29\"\r\n    browser.quit()\r\n
+===================================================================
+diff --git a/Lesson_7/07_lesson/shop_page_odject_test.py b/Lesson_7/07_lesson/shop_page_odject_test.py
+--- a/Lesson_7/07_lesson/shop_page_odject_test.py	(revision 2461280b9c51f08efdd747f6f2b07e9b10db0988)
++++ b/Lesson_7/07_lesson/shop_page_odject_test.py	(date 1732274934804)
+@@ -10,9 +10,8 @@
+ def test_total():
+     browser = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
+     
+-    Username = Registration(browser)
+-    Username.registr("standard_user", 
+-                     "secret_sauce")
++    reg = Registration(browser)
++    reg.registr("standard_user", "secret_sauce")
+    
+     main_page = MainPage(browser)
+     main_page.add()
+Index: Lesson_7/07_lesson/Form_page/MainPage.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from selenium.webdriver.common.by import By\r\nclass MainPage:\r\n\r\n    def __init__(self, driver):\r\n        self._driver = driver\r\n        self._driver.get('https://bonigarcia.dev/selenium-webdriver-java/data-types.html')\r\n        self._driver.implicitly_wait(10)\r\n        self._driver.maximize_window()\r\n\r\n    def input_first(self, term):\r\n        self._driver.find_element(By.CSS_SELECTOR, 'input[name=first-name]').send_keys(term)\r\n    def input_last(self, term):    \r\n        self._driver.find_element(By.CSS_SELECTOR, 'input[name=last-name]').send_keys(term)\r\n    def input_address(self, term): \r\n        self._driver.find_element(By.CSS_SELECTOR, 'input[name=address]').send_keys(term)\r\n    def input_zip(self, term): \r\n        self._driver.find_element(By.CSS_SELECTOR, 'input[name=zip-code]').send_keys(term)\r\n    def input_city(self, term): \r\n        self._driver.find_element(By.CSS_SELECTOR, 'input[name=city]').send_keys(term)\r\n    def input_country(self, term): \r\n        self._driver.find_element(By.CSS_SELECTOR, 'input[name=country').send_keys(term)\r\n    def input_mail(self, term): \r\n        self._driver.find_element(By.CSS_SELECTOR, 'input[name=e-mail]').send_keys(term)\r\n    def input_phone(self, term): \r\n        self._driver.find_element(By.CSS_SELECTOR, 'input[name=phone]').send_keys(term)\r\n    def input_job(self, term): \r\n        self._driver.find_element(By.CSS_SELECTOR, 'input[name=job-position]').send_keys(term)\r\n    def input_company(self, term): \r\n        self._driver.find_element(By.CSS_SELECTOR, 'input[name=company]').send_keys(term)\r\n        self._driver.find_element(\r\n            By.CSS_SELECTOR, 'button.btn.btn-outline-primary.mt-3').click()\r\n
+===================================================================
+diff --git a/Lesson_7/07_lesson/Form_page/MainPage.py b/Lesson_7/07_lesson/Form_page/MainPage.py
+--- a/Lesson_7/07_lesson/Form_page/MainPage.py	(revision 2461280b9c51f08efdd747f6f2b07e9b10db0988)
++++ b/Lesson_7/07_lesson/Form_page/MainPage.py	(date 1732280624967)
+@@ -3,29 +3,34 @@
+ 
+     def __init__(self, driver):
+         self._driver = driver
+-        self._driver.get('https://bonigarcia.dev/selenium-webdriver-java/data-types.html')
++        self._driver.get(
++            'https://bonigarcia.dev/selenium-webdriver-java/data-types.html')
+         self._driver.implicitly_wait(10)
++        self._driver.execute_script("document.body.style.zoom='80%'")
+         self._driver.maximize_window()
+ 
+     def input_first(self, term):
+         self._driver.find_element(By.CSS_SELECTOR, 'input[name=first-name]').send_keys(term)
+-    def input_last(self, term):    
++    def input_last(self, term):
+         self._driver.find_element(By.CSS_SELECTOR, 'input[name=last-name]').send_keys(term)
+-    def input_address(self, term): 
++    def input_address(self, term):
+         self._driver.find_element(By.CSS_SELECTOR, 'input[name=address]').send_keys(term)
+-    def input_zip(self, term): 
++    def input_zip(self, term):
+         self._driver.find_element(By.CSS_SELECTOR, 'input[name=zip-code]').send_keys(term)
+-    def input_city(self, term): 
++    def input_city(self, term):
+         self._driver.find_element(By.CSS_SELECTOR, 'input[name=city]').send_keys(term)
+-    def input_country(self, term): 
++    def input_country(self, term):
+         self._driver.find_element(By.CSS_SELECTOR, 'input[name=country').send_keys(term)
+-    def input_mail(self, term): 
++    def input_mail(self, term):
+         self._driver.find_element(By.CSS_SELECTOR, 'input[name=e-mail]').send_keys(term)
+-    def input_phone(self, term): 
++    def input_phone(self, term):
+         self._driver.find_element(By.CSS_SELECTOR, 'input[name=phone]').send_keys(term)
+-    def input_job(self, term): 
++    def input_job(self, term):
+         self._driver.find_element(By.CSS_SELECTOR, 'input[name=job-position]').send_keys(term)
+-    def input_company(self, term): 
++    def input_company(self, term):
+         self._driver.find_element(By.CSS_SELECTOR, 'input[name=company]').send_keys(term)
+         self._driver.find_element(
+             By.CSS_SELECTOR, 'button.btn.btn-outline-primary.mt-3').click()
++
++    def check_field(self, field):
++        return self._driver.find_element(By.ID, field).get_attribute("class")

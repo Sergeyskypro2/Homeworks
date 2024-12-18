@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="553c07e1-ee59-47e2-9164-09c7c173068a" name="Changes" comment="Lesson_9">
+      <change afterPath="$PROJECT_DIR$/Lesson_9/09_lesson/db_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_lesson/Lesson_1_task_1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_lesson/Lesson_1_task_2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_lesson/Lesson_1_task_3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_lesson/Lesson_1_task_4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/01_lesson/Lesson_1_task_5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson_8/08_lesson/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lesson_8/08_lesson/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson_8/08_lesson/test_project.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lesson_8/08_lesson/test_project.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson_8/08_lesson/yougile.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lesson_8/08_lesson/yougile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson_9/09_lesson/Data.py" beforeDir="false" afterPath="$PROJECT_DIR$/Lesson_9/09_lesson/Data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Lesson_9/09_lesson/test.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Lesson_7" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Sergeyskypro2&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Sergeyskypro2/Homeworks.git&quot;,
+    &quot;accountId&quot;: &quot;b7b87e4f-e479-4156-92ac-3dfe6bbe55e8&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="2oLsLi6UK2YFQQEFwsrXF9fiQ97" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.pytest for labirint_page_object_test.test_card_counter.executor": "Debug",
+    "Python tests.pytest in test.py.executor": "Debug",
+    "Python tests.pytest in test_01_form.py.executor": "Run",
+    "Python.Дождаться картинки.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "Lesson__9",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/shlya/OneDrive/Рабочий стол/учеба/HW/Homeworks",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": []
+  }
+}]]></component>
+  <component name="RunManager">
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.pytest for labirint_page_object_test.test_card_counter" />
+        <item itemvalue="Python tests.pytest for labirint_page_object_test.test_card_counter" />
+        <item itemvalue="Python tests.pytest for labirint_page_object_test.test_card_counter" />
+        <item itemvalue="Python tests.pytest for labirint_page_object_test.test_card_counter" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-6a3326d57233-c546a90a8094-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-242.24807.21" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="553c07e1-ee59-47e2-9164-09c7c173068a" name="Changes" comment="" />
+      <created>1730660183246</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1730660183246</updated>
+      <workItem from="1730660192010" duration="34000" />
+      <workItem from="1731176539211" duration="47000" />
+      <workItem from="1731176968850" duration="257000" />
+      <workItem from="1731246639520" duration="456000" />
+      <workItem from="1731263838824" duration="166000" />
+    </task>
+    <task id="LOCAL-00001" summary="Lesson_6k">
+      <option name="closed" value="true" />
+      <created>1731441455972</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1731441455972</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Lesson_7">
+      <option name="closed" value="true" />
+      <created>1732212831169</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732212831169</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Lesson_7">
+      <option name="closed" value="true" />
+      <created>1732213662941</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732213662941</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Lesson_7">
+      <option name="closed" value="true" />
+      <created>1732213812882</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732213812883</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Lesson_8">
+      <option name="closed" value="true" />
+      <created>1733255587875</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1733255587875</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Lesson_8">
+      <option name="closed" value="true" />
+      <created>1733255865477</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1733255865477</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Lesson_8">
+      <option name="closed" value="true" />
+      <created>1733255942433</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1733255942433</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Lesson_9">
+      <option name="closed" value="true" />
+      <created>1733685669356</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1733685669356</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Lesson_9">
+      <option name="closed" value="true" />
+      <created>1733686278427</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1733686278427</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Lesson_6k" />
+    <MESSAGE value="Lesson_7" />
+    <MESSAGE value="Lesson_8" />
+    <MESSAGE value="Lesson_9" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lesson_9" />
+  </component>
+</project>
